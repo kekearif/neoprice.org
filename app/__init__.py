@@ -4,6 +4,23 @@ from flask_bootstrap import Bootstrap
 import os
 
 
+# Dev version
+# bootstrap = Bootstrap()
+#
+#
+# def create_app(config_name):
+#     app = Flask(__name__)
+#     app.config.from_object(config[config_name])
+#     config[config_name].init_app(app)
+#
+#     bootstrap.init_app(app)
+#
+#     from main import main as main_blueprint
+#     app.register_blueprint(main_blueprint)
+#     return app
+
+# Prod version
+
 def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
@@ -17,5 +34,4 @@ def create_app(config_name):
 
 
 bootstrap = Bootstrap()
-# New line to work on the server
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')

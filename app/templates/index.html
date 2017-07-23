@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script>
+  setInterval(function(){
+    $.get('/price',function(data) {
+        document.getElementById("p1").innerHTML = "1 NEO - $" + data.value;
+    });
+  }, 5000);
+</script>
+<div class="container">
+  <div class="jumbotron">
+    <center><h1 id="p1">1 NEO - $</h1></center>
+  </div>
+</div>
+{% endblock %}

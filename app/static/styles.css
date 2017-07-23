@@ -1,0 +1,13 @@
+.navbar-default {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.navbar-default .navbar-brand {
+    color: #58BE23;
+    font-size: xx-large;
+}
+
+.jumbotron {
+  background-color: #ffffff;
+}

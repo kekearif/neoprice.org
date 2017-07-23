@@ -1,8 +1,7 @@
 from flask import Flask
 from config import config
 from flask_bootstrap import Bootstrap
-
-bootstrap = Bootstrap()
+import os
 
 
 def create_app(config_name):
@@ -15,3 +14,8 @@ def create_app(config_name):
     from main import main as main_blueprint
     app.register_blueprint(main_blueprint)
     return app
+
+
+bootstrap = Bootstrap()
+# New line to work on the server
+app = create_app(os.getenv('FLASK_CONFIG') or 'default')

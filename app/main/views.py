@@ -1,17 +1,17 @@
 from . import main
-from flask import jsonify
-from flask import render_template
-import requests
+from flask import render_template, jsonify
 import json
 
 
 @main.route('/')
 def index():
-    return render_template('index.html')
+    with main.open_resource("../static/prices.json") as infile:
+        data = json.load(infile)
+    return render_template('index.html', price=data["USD"])
 
 
 @main.route('/price')
 def price():
-    resp = requests.get("https://min-api.cryptocompare.com/data/price?fsym=ANS&tsyms=BTC,USD")
-    data = json.loads(resp.text)
+    with main.open_resource("../static/prices.json") as infile:
+        data = json.load(infile)
     return jsonify({'value': data["USD"]})

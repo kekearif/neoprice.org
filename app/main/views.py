@@ -7,11 +7,13 @@ import json
 def index():
     with main.open_resource("../static/prices.json") as infile:
         data = json.load(infile)
-    return render_template('index.html', price=data["USD"])
+        usd_str = "%.2f" % data["USD"]
+    return render_template('index.html', price=usd_str)
 
 
 @main.route('/price')
 def price():
     with main.open_resource("../static/prices.json") as infile:
         data = json.load(infile)
-    return jsonify({'value': data["USD"]})
+        usd_str = "%.2f" % data["USD"]
+    return jsonify({'value': usd_str})

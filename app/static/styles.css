@@ -1,3 +1,27 @@
+/*html {
+  position: relative;
+  min-height: 100%;
+}*/
+
+/*body {*/
+  /* Margin bottom by footer height */
+  /*margin-bottom: 60px;
+}*/
+
+/*.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;*/
+  /* Set the fixed height of the footer here */
+  /*height: 60px;
+  background-color: #58BE23;
+}*/
+
+/*.footer-text {
+  color: #FFFFFF;
+  bottom: 30px;
+}*/
+
 .navbar-default {
   background-color: #ffffff;
   border-color: #ffffff;
@@ -9,5 +33,81 @@
 }
 
 .jumbotron {
+  text-align: center;
   background-color: #ffffff;
+}
+
+/*.container .jumbotron h1 {
+        font-size: 80px;
+}*/
+
+.top-col-left {
+    /*color: #ffffff;*/
+    height: 120px;
+    text-align: center;
+    /*padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 15px;*/
+}
+
+.top-col-center {
+    /*color: #ffffff;*/
+    height: 120px;
+    text-align: center;
+    /*padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 15px;*/
+}
+
+.top-col-right {
+    /*color: #ffffff;*/
+    height: 120px;
+    text-align: center;
+    /*padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 15px;*/
+}
+
+.triangle-spacer {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7.5px 10px 7.5px;
+  border-color: transparent;
+  margin-bottom: 15px;
+  margin-right: 2px;
+  display: inline-block;
+  webkit-transform: rotate(360deg);
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7.5px 10px 7.5px;
+    border-color: transparent transparent #58BE23 transparent;
+    margin-bottom: 15px;
+    margin-let: 2px;
+    display: inline-block;
+    webkit-transform: rotate(360deg);
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 7.5px 0 7.5px;
+  border-color: #F44242 transparent transparent transparent;
+  margin-bottom: 15px;
+  margin-right: 2px;
+  display: inline-block;
+  webkit-transform: rotate(360deg);
+}
+
+.increase {
+  color: #58BE23;
+}
+
+.decrease {
+  color: #F44242;
 }

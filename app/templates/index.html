@@ -1,17 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-<script>
-  setInterval(function(){
-    $.get('/price',function(data) {
-        document.title = `($${data.value}) NEO Price`;
-        document.getElementById("p1").innerHTML = `1 NEO - $${data.value}`;
-    });
-  }, 30000);
-</script>
 <div class="container">
   <div class="jumbotron">
-    <center><h1 id="p1">1 NEO - ${{ price }}</h1></center>
+    <h1 id="p1">1 NEO - ${{ price }}</h1>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <!-- col-sm-4 col-xs-6 top-col-left -->
+    <div class="col-sm-4 top-col-left">
+      <h4>24 Hour High</h4>
+      <h1 id="p2">${{ high }}</h1>
+    </div>
+    <!-- col-sm-4 col-xs-6 top-col-center -->
+    <div class="col-sm-4 top-col-center">
+      <h4>24 Hour Low</h4>
+      <h1 id="p3">${{ low }}</h1>
+    </div>
+    <!-- col-sm-4 col-xs-12 top-col-right -->
+    <div class="col-sm-4 top-col-right">
+      <h4>24 Hour Change</h4>
+      <h1 class={% if decrease %}"decrease"{% else %}"increase"{% endif %} id="p4"><i class="triangle-spacer"></i>${{ change }}{% if decrease %}<i class="triangle-down">{% else %}<i class="triangle-up">{% endif %}</i></h1>
+    </div>
+  </div>
+</div>
+<!-- <footer class="footer">
+  <div class="container">
+    <h5 class="footer-text">neoprice.org ©</p>
+  </div>
+</footer> -->
+<script src="{{url_for('static', filename='main.js')}}" defer></script>
 {% endblock %}

@@ -1,11 +1,12 @@
 from . import main
 from flask import render_template, jsonify
+from flask import current_app as app
 import json
 
 
 @main.route('/')
 def index():
-    with main.open_resource("../static/prices.json") as infile:
+    with main.open_resource(app.config['JSON_PATH']) as infile:
         data = json.load(infile)
         price_str = "%.2f" % data["RAW"]["ANS"]["USD"]["PRICE"]
         low_str = "%.2f" % data["RAW"]["ANS"]["USD"]["LOW24HOUR"]
@@ -17,7 +18,7 @@ def index():
 
 @main.route('/price')
 def price():
-    with main.open_resource("../static/prices.json") as infile:
+    with main.open_resource(app.config['JSON_PATH']) as infile:
         data = json.load(infile)
         price_str = "%.2f" % data["RAW"]["ANS"]["USD"]["PRICE"]
         low_str = "%.2f" % data["RAW"]["ANS"]["USD"]["LOW24HOUR"]

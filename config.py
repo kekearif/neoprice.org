@@ -12,8 +12,15 @@ class Config(object):
 
 class DevelopmentConfig(Config):
     DEBUG = True
+    JSON_PATH = "/Users/kekearif/Documents/neoprice.org/app/static/prices.json"
+
+
+class ProductionConfig(Config):
+    PROD = True
+    JSON_PATH = "/var/www/neoprice.org/app/static/prices.json"
 
 
 config = {
-    'default': DevelopmentConfig
+    'default': DevelopmentConfig,
+    'prod': ProductionConfig
 }

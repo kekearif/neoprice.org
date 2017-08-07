@@ -6,6 +6,7 @@ from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap()
 
 
+# This method is called via manage.py for test env
 def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
@@ -18,4 +19,5 @@ def create_app(config_name):
     return app
 
 
+# App is init here in production
 app = create_app('prod')

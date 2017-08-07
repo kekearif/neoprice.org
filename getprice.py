@@ -2,7 +2,7 @@ import requests
 import json
 import os
 
-resp = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ANS&tsyms=USD")
+resp = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=NEO&tsyms=USD")
 data = json.loads(resp.text)
 
 

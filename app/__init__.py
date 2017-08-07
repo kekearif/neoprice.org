@@ -1,7 +1,7 @@
 from flask import Flask
 from config import config
 from flask_bootstrap import Bootstrap
-import os
+
 
 bootstrap = Bootstrap()
 
@@ -18,9 +18,4 @@ def create_app(config_name):
     return app
 
 
-# if os.getenv("PROD"):
-#     app = create_app(os.getenv('FLASK_CONFIG') or 'default')
-
-
-# Temp fix but need to make it work 
 app = create_app('prod')
